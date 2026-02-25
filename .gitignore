@@ -1,0 +1,9 @@
+# Files to ignore from version control
+
+# local instructions and notes
+LOCAL_NOTES.md
+
+# other local or OS-specific files
+*.log
+*.tmp
+.DS_Store
