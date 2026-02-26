@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impostazioni Quiz di Istologia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="home-container">
+        <h1 class="home-title">Imposta il Quiz</h1>
+
+        <label for="numDomande" style="font-size: 1.2rem;">Numero di domande:</label>
+        <select id="numDomande" style="
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        ">
+            <option value="5">5 domande</option>
+            <option value="10">10 domande</option>
+            <option value="15">15 domande</option>
+            <option value="20">20 domande</option>
+        </select>
+
+       <h3>Tipo di quiz</h3>
+
+<div class="quiz-type-container">
+
+    <label class="quiz-type-card">
+        <input type="radio" name="tipoQuiz" value="misto" checked>
+        <div class="card-content">
+            <span class="icon">🔀</span>
+            <span class="label">Misto</span>
+        </div>
+    </label>
+
+    <label class="quiz-type-card">
+        <input type="radio" name="tipoQuiz" value="immagini">
+        <div class="card-content">
+            <span class="icon">🖼️</span>
+            <span class="label">Solo immagini</span>
+        </div>
+    </label>
+
+    <label class="quiz-type-card">
+        <input type="radio" name="tipoQuiz" value="domande">
+        <div class="card-content">
+            <span class="icon">❓</span>
+            <span class="label">Solo domande</span>
+        </div>
+    </label>
+
+</div>
+
+<button id="startQuiz">Inizia il Quiz</button>
+
+    <script>
+document.getElementById("startQuiz").addEventListener("click", function () {
+    const num = document.getElementById("numDomande").value;
+    const tipo = document.querySelector('input[name="tipoQuiz"]:checked').value;
+
+    // Reindirizza al quiz passando numero di domande + tipo
+    window.location.href = `istologia.html?num=${num}&tipo=${tipo}`;
+});
+</script>
+
+</body>
+</html>

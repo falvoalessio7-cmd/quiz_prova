@@ -1,0 +1,334 @@
+/* --------------------------------------------------
+   1. STILI GLOBALI
+-------------------------------------------------- */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2b5876);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+input, button {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* --------------------------------------------------
+   2. QUIZ — STRUTTURA E CONTENITORI
+-------------------------------------------------- */
+
+#game {
+    width: 90%;
+    max-width: 350px;
+    margin: auto;
+}
+
+#quiz-box {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+}
+
+#quiz-image {
+    width: 100%;
+    height: auto;
+}
+
+/* --------------------------------------------------
+   3. QUIZ — INPUT, BOTTONI, FEEDBACK
+-------------------------------------------------- */
+
+button {
+    background: #00c853;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #009624;
+}
+
+#next-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #ff9800;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    display: none;
+}
+
+#feedback {
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    height: auto;          /* lascia che cresca */
+    line-height: 1.3;      /* migliora la leggibilità */
+    overflow: visible;     /* evita tagli */
+}
+
+
+.correct {
+    color: #00e676;
+    animation: pop 0.4s ease;
+}
+
+.wrong {
+    color: #ff5252;
+    animation: shake 0.4s ease;
+}
+
+/* --------------------------------------------------
+   4. QUIZ — ANIMAZIONI
+-------------------------------------------------- */
+
+@keyframes pop {
+    0% { transform: scale(0.7); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* --------------------------------------------------
+   5. QUIZ — PROGRESS BAR
+-------------------------------------------------- */
+
+#progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #444;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#progress {
+    height: 10px;
+    width: 0%;
+    background: #00e676;
+    border-radius: 5px;
+    transition: width 0.3s;
+}
+
+#score {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* --------------------------------------------------
+   6. HOME — TITOLO E CONTENITORE SUPERIORE
+-------------------------------------------------- */
+
+.home-container {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+.home-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #000;
+}
+
+/* --------------------------------------------------
+   7. HOME — LINK SEMPLICE (SE SERVE ANCORA)
+-------------------------------------------------- */
+
+.quiz-link {
+    display: block;
+    width: fit-content;
+    padding: 10px 20px;
+    background: #00c853;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.2s;
+    margin: auto;
+}
+
+.quiz-link:hover {
+    background: #009624;
+}
+
+/* --------------------------------------------------
+   8. CARD CON IMMAGINE + PULSANTE + TESTO
+-------------------------------------------------- */
+
+.quiz-card {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    height: 200px;
+}
+
+.quiz-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.quiz-card-overlay {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quiz-card-button {
+    background: rgba(0, 200, 83, 0.9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    backdrop-filter: blur(3px);
+    transition: 0.2s;
+}
+
+.quiz-card-button:hover {
+    background: rgba(0, 150, 60, 0.9);
+}
+
+.quiz-card-text {
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+}
+
+/* --------------------------------------------------
+   9. RESPONSIVE
+-------------------------------------------------- */
+
+
+/* --- MOBILE: max 480px --- */
+@media (max-width: 480px) {
+    h1.title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+
+/* --- MOBILE: max 600px --- */
+@media (max-width: 600px) {
+
+    /* Spazio extra per evitare il badge Mimo */
+    #startQuiz {
+        margin-bottom: 120px;
+    }
+
+    /* Centra e restringe il contenitore principale */
+    .home-container {
+        width: 81.5%;          /* più stretto = più centrato */
+        max-width: 340px;    /* evita che diventi troppo largo su telefoni grandi */
+        margin: 0 auto;
+    }
+
+    /* Centra e restringe le quiz-card */
+    .quiz-card {
+        width: 85%;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .next-btn, 
+    .confirm-btn, 
+    #nextQuestion, 
+    #confirmAnswer { 
+        margin-bottom: 160px; /* spazio per evitare il badge Mimo */ 
+        } 
+}
+
+
+/* --------------------------------------------------
+   10. HOME — SELEZIONE TIPO QUIZ (CARDS)
+-------------------------------------------------- */
+.quiz-type-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.quiz-type-card {
+    display: block;
+    cursor: pointer;
+}
+
+.quiz-type-card input {
+    display: none;
+}
+
+.quiz-type-card .card-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    background: #f7f7f7;
+    transition: 0.25s;
+    font-size: 1.1rem;
+    color: #222;
+}
+
+.quiz-type-card .icon {
+    font-size: 1.4rem;
+}
+
+.quiz-type-card input:checked + .card-content {
+    border-color: #4a90e2;
+    background: #e8f1ff;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.4);
+}
+
+.quiz-type-card .card-content:hover {
+    transform: scale(1.02);
+    border-color: #4a90e2;
+}
+
+

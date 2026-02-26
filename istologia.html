@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Istologia Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 class="title">Quiz Istologia</h1>
+
+    <div id="game">
+
+        <div id="progress-bar">
+            <div id="progress"></div>
+        </div>
+
+        <div id="score">Punteggio: 0</div>
+
+       <div id="quiz-box">
+
+    <!-- 🔹 IMMAGINE (solo per domande con immagine) -->
+    <img id="quiz-image" alt="quiz" style="display:none;">
+
+    <!-- 🔹 TESTO DELLA DOMANDA (solo per multiple choice) -->
+    <p id="question-text" style="display:none; font-size: 20px; font-weight: bold;"></p>
+
+    <!-- 🔹 INPUT PER RISPOSTE TESTUALI -->
+    <input id="answer" type="text" placeholder="Scrivi la parola..." autocomplete="off" style="display:none; margin-top:10px;">
+
+    <!-- 🔹 PULSANTE VERIFICA SOTTO L’INPUT -->
+    <button id="btn" onclick="checkAnswer()" style="display:none; margin-top:10px;">
+        Verifica
+    </button>
+
+    <!-- 🔹 FEEDBACK SOTTO IL PULSANTE -->
+    <p id="feedback" style="margin-top:15px;"></p>
+
+    <!-- 🔹 CONTENITORE PER LE OPZIONI MULTIPLE -->
+    <div id="options" style="display:none; margin-top:20px;"></div>
+
+    <!-- 🔹 PULSANTE PROSSIMA -->
+    <button id="next-btn" onclick="nextQuestion()" style="display:none; margin-top:20px;">
+        Prossima
+    </button>
+
+</div>
+
+
+    </div>
+
+    <script src="script_istologia.js"></script>
+</body>
+</html>

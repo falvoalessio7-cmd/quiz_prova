@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impostazioni Quiz di Anatomia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="home-container">
+        <h1 class="home-title">Imposta il Quiz</h1>
+
+        <label for="numDomande" style="font-size: 1.2rem;">Numero di domande:</label>
+        <select id="numDomande" style="
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        ">
+            <option value="5">5 domande</option>
+            <option value="10">10 domande</option>
+            <option value="15">15 domande</option>
+            <option value="20">20 domande</option>
+        </select>
+
+        <button id="startQuiz" style="margin-top: 20px;">Inizia il Quiz</button>
+    </div>
+
+    <script>
+        document.getElementById("startQuiz").addEventListener("click", function() {
+            const num = document.getElementById("numDomande").value;
+
+            // Reindirizza al quiz passando il numero di domande nella URL
+            window.location.href = "anatomia.html?num=" + num;
+        });
+    </script>
+
+</body>
+</html>
